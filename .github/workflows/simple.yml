@@ -10,3 +10,10 @@ jobs:
         run: |
           node -v
           npm -v
+      - name: Python command
+        shell: python {0}
+        run: |
+          import platform
+          print("Hello, world!")
+          print(platform.python_version())
+          print(platform.processor())
