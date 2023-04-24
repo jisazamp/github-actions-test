@@ -17,3 +17,12 @@ jobs:
           print("Hello, world!")
           print(platform.python_version())
           print(platform.processor())
+  run-windows-commands:
+    runs-on: windows-latest
+    needs: [run-shell-command]
+    steps:
+      - name: Run a Windows script
+        run: |
+          echo Hello, world!
+          echo $env:OS
+          echo $env:PROCESSOR_ARCHITECTURE
